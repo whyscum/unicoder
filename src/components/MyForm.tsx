@@ -45,6 +45,7 @@ const MyForm: FC<MyFormProps> = ({create}) => {
                     placeholder='Code'
                     value={value.title}
                     onChange={e => setValue({...value, title: e.target.value})}
+                    maxLength={20}
                 />
                 <MyInput
                     placeholder='Num'
