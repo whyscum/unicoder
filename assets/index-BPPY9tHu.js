@@ -89,7 +89,7 @@ Error generating stack: `+e.message+`
     display: flex;
     justify-content: center;
     align-items: center;
-`,Cv=({create:i})=>{const[f,o]=se.useState({title:"",body:""}),r=se.useCallback(g=>{g.preventDefault();const E=parseInt(f.body);if(isNaN(E)){alert("Введите корректное число");return}const D=f.title.split("").map(b=>b.charCodeAt(0)+E),H=String.fromCharCode(...D),z={...f,ans:H,id:Date.now()};i(z),o({title:"",body:""})},[f]);return w.jsxs(xv,{children:[w.jsx("h1",{children:"Project Unicode"}),w.jsxs("form",{children:[w.jsx(cs,{placeholder:"Code",value:f.title,onChange:g=>o({...f,title:g.target.value}),maxLength:20}),w.jsx(cs,{placeholder:"Num",type:"number",value:f.body,onChange:g=>o({...f,body:g.target.value})}),w.jsx(re,{onClick:r,children:"Confirm"})]})]})},qv=jl.div`
+`,Cv=({create:i})=>{const[f,o]=se.useState({title:"",body:""}),r=se.useCallback(g=>{g.preventDefault();const E=parseInt(f.body);if(isNaN(E)){alert("Введите корректное число");return}const D=f.title.split("").map(b=>b.charCodeAt(0)+E),H=String.fromCharCode(...D),z={...f,ans:H,id:Date.now()};i(z),o({title:"",body:""})},[f]);return w.jsxs(xv,{children:[w.jsx("h1",{children:"Project Unicode"}),w.jsxs("form",{children:[w.jsx(cs,{placeholder:"Code",value:f.title,onChange:g=>{f.title.length>15&&alert("Не вводите много текста(защита пользователя)"),o({...f,title:g.target.value})},maxLength:20}),w.jsx(cs,{placeholder:"Num",type:"number",value:f.body,onChange:g=>o({...f,body:g.target.value})}),w.jsx(re,{onClick:r,children:"Confirm"})]})]})},qv=jl.div`
     display: flex;
     padding: 15px;
     border: 2px solid dimgray;
