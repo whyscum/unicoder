@@ -44,7 +44,9 @@ const MyForm: FC<MyFormProps> = ({create}) => {
                 <MyInput
                     placeholder='Code'
                     value={value.title}
-                    onChange={e => setValue({...value, title: e.target.value})}
+                    onChange={e =>{
+                        if(value.title.length>15)alert("Не вводите много текста(защита пользователя)")
+                        setValue({...value, title: e.target.value})}}
                     maxLength={20}
                 />
                 <MyInput
