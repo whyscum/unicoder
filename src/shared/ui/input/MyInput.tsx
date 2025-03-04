@@ -1,11 +1,18 @@
 import React from "react";
-import classes from "./MyInput.module.css"
+import styled from "styled-components"
+import {MyInputProps} from "../../interfaces/interfaces";
 
+const MyInputStyled = styled.input`
+    width: 100%;
+    padding: 5px 15px;
+    margin: 5px 0;
+    border: 2px solid dimgray;
+    border-radius: 5px;
+`
 
-
-const MyInput = React.forwardRef((props,ref) => {
+const MyInput:React.FC<MyInputProps> = React.forwardRef<HTMLInputElement, MyInputProps>((props,ref) => {
     return (
-        <input className={classes} ref={ref} {...props}/>
+        <MyInputStyled ref={ref} {...props}/>
     )
 })
 

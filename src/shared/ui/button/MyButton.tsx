@@ -1,17 +1,21 @@
-import classes from "./MyButton.module.css"
 import * as React from "react"
-import {JSX} from "react";
+import styled from "styled-components"
+import {MyButtonProps} from "../../interfaces/interfaces";
 
-interface MyButtonProps {
-    props:React.AnchorHTMLAttributes<HTMLAnchorElement>;
-    children:React.ReactNode
-}
+const MyButtonStyled = styled.button`
+    padding: 5px 15px;
+    color: dimgray;
+    font-size: 14px;
+    background: transparent;
+    border: 2px solid dimgray;
+    border-radius: 5px;
+`
 
-const MyButton:React.FC<MyButtonProps> = ({children, ...props}): JSX.Element => {
+const MyButton:React.FC<MyButtonProps> = ({children, ...props}) => {
     return (
-        <button {...props} className={classes.myBtn}>
+        <MyButtonStyled {...props}>
             {children}
-        </button>
+        </MyButtonStyled>
     )
 }
 

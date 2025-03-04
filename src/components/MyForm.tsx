@@ -1,7 +1,9 @@
 import MyInput from "../shared/ui/input/MyInput";
-import {useState, useCallback} from "react";
+import {useState, useCallback, FC} from "react";
 import MyButton from "../shared/ui/button/MyButton";
 import styled from "styled-components"
+import React from "react";
+import {MyFormProps} from "../shared/interfaces/interfaces";
 
 const MyFormStyled = styled.div `
     width: 350px;
@@ -11,11 +13,11 @@ const MyFormStyled = styled.div `
     align-items: center;
 `
 
-const MyForm = ({create}) => {
+const MyForm: FC<MyFormProps> = ({create}) => {
 
     const [value, setValue] = useState({title: '',body: ''})
 
-    const handleMath = useCallback((e) => {
+    const handleMath = useCallback((e:any) => {
         e.preventDefault()
 
         const num = parseInt(value.body)
