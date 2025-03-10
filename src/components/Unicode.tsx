@@ -54,13 +54,13 @@ const Unicode = () => {
         }
         setPinned([...pinned, getPinned])
         /*localStorage.setItem('pinnedPost', JSON.stringify([...pinned, getPinned]))*/
-    }, [pinned])
+    }, [])
 
     const unpinPost = useCallback((post: Post) => {
         const getUnpin = pinned.filter(el => el.id !== post.id)
         setPinned(getUnpin)
         /*localStorage.setItem('pinnedPost', JSON.stringify(getUnpin))*/
-    }, [pinned])
+    }, [])
 
     /*useEffect(() => {
         localStorage.setItem("posts")
