@@ -1,31 +1,23 @@
 import React, {FC} from "react";
-import MyButton from "../shared/ui/button/MyButton";
-import styled from "styled-components"
+import Button from "../shared/ui/button/Button";
 import {PinnedPostItemsProps} from "../shared/interfaces/interfaces";
+import {PostStyled} from "../shared/styled/styled-components";
 
-export const PostStyled = styled.div `
-    display: flex;
-    padding: 15px;
-    border: 2px solid dimgray;
-    border-radius: 5px;
-    margin-top: 15px;
-    justify-content: space-between;
-    align-items: center;
-`
+const PinnedPostItems: FC<PinnedPostItemsProps> = props => {
+    const {post, number, unpin} = props
 
-const PinnedPostItems: FC<PinnedPostItemsProps> = (props) => {
     return (
         <PostStyled>
             <div>
-                <strong>{props.number}. {props.post.title}({props.post.body})</strong>
+                <strong>{number}. {post.title}({post.body})</strong>
             </div>
             <div>
-                {props.post.ans}
+                {post.ans}
             </div>
             <div>
-                <MyButton onClick ={()=> props.unpin(props.post)}>
+                <Button onClick={() => unpin(post)}>
                     Unpin
-                </MyButton>
+                </Button>
             </div>
         </PostStyled>
     )

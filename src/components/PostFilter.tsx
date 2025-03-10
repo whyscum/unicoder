@@ -1,20 +1,16 @@
 import React, {FC} from "react";
-import MyButton from "../shared/ui/button/MyButton";
+import Button from "../shared/ui/button/Button";
 import {PostFilterProps} from "../shared/interfaces/interfaces";
+import {FilterNames} from "../shared/enums/enum";
 
-export enum FilterNames {
-    'Alphabetically'='A-Z',
-    'DateDown'='Date↓',
-    'DateUp'='Date↑'
-}
-
-const PostFilter: FC<PostFilterProps> = ({sort, sortIdDown, sortIdUp}) => {
+const PostFilter: FC<PostFilterProps> = props => {
+    const {sort, sortIdDown, sortIdUp} = props
 
     return (
         <div>
-            <MyButton onClick={sort}>{FilterNames.Alphabetically}</MyButton>
-            <MyButton onClick={sortIdDown}>{FilterNames.DateDown}</MyButton>
-            <MyButton onClick={sortIdUp}>{FilterNames.DateUp}</MyButton>
+            <Button onClick={sort}>{FilterNames.Alphabetically}</Button>
+            <Button onClick={sortIdDown}>{FilterNames.DateDown}</Button>
+            <Button onClick={sortIdUp}>{FilterNames.DateUp}</Button>
         </div>
     )
 }

@@ -5,11 +5,12 @@ export interface MyButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElem
     children: React.ReactNode;
 }
 
-export interface MyInputProps extends React.InputHTMLAttributes<HTMLInputElement> {}
+export interface MyInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+}
 
 export interface MyModalProps {
     children: ReactNode
-    setVisible: (b: boolean) => void
+    onClose: () => void
     visible: boolean
 }
 
@@ -45,8 +46,8 @@ export interface PostItemsProps {
 
 export interface PostListProps {
     posts: Array<Post>
-    remove:(post: Post) => void
+    remove: (post: Post) => void
     pinned: Array<Post>
-    pin:(post: Post) => void
-    unpin:(post: Post) => void
+    pin: (post: Post) => void
+    unpin: (post: Post) => void
 }
