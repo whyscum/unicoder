@@ -38,7 +38,7 @@ const PostForm: FC<MyFormProps> = ({create}) => {
                     type="number"
                     value={value.body}
                     onChange={e => {setValue({...value, body: e.target.value})
-                        if (value.body.length == 6)setValue({...value, body: value.body.slice(0, 6)})}}
+                        if (value.body.length > 6)setValue({...value, body: value.body.slice(0, 6)})}}
                 />
                 <Button onClick={handleMath}>Confirm</Button>
             </form>
