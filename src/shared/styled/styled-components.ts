@@ -15,6 +15,7 @@ export const Global = createGlobalStyle`
     :root {
         display: flex;
         justify-content: center;
+        background-color: slategrey;
     }
 `
 
@@ -29,7 +30,7 @@ export const MyFormStyled = styled.div`
 export const PostStyled = styled.div`
     display: flex;
     padding: 15px;
-    border: 2px solid dimgray;
+    border: 2px solid black;
     border-radius: 5px;
     margin-top: 15px;
     justify-content: space-between;
@@ -42,21 +43,21 @@ export const HrStyled = styled.hr`
     height: 10px;
     border: none;
     border-top: 1px solid #333;
-    box-shadow: 0 10px 10px -10px #8c8b8b inset;
+    box-shadow: 0 10px 10px -10px black inset;
 `
 
 export const MyButtonStyled = styled.button`
     padding: 5px 15px;
-    color: dimgray;
+    color: black;
     font-size: 14px;
     background: transparent;
-    border: 2px solid dimgray;
+    border: 3px solid black;
     border-radius: 5px;
     box-shadow: 0 1px 0 gray;
     transition: 0.5s;
     &:hover {
         transform: translate(0,-1px);
-        box-shadow: 0 10px 10px 0 rgba(64, 64, 64, 0.8);
+        box-shadow: 0 5px 10px 0 rgba(64, 64, 64, 0.8);
     }
 `
 
@@ -64,7 +65,7 @@ export const MyInputStyled = styled.input`
     width: 100%;
     padding: 5px 15px;
     margin: 5px 0;
-    border: 2px solid dimgray;
+    border: 3px solid black;
     border-radius: 5px;
     
 `

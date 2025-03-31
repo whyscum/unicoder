@@ -14,7 +14,6 @@ const PostItem: FC<PostItemsProps> = props => {
             <div>
                 {post.ans}
             </div>
-            {post.ans == 'лгбт'? <img src="public/qr-code.svg" height='50px' alt={'прикол'}/>:null}
             <div>
                 <Button onClick={() => remove(post)}>
                     Delete
