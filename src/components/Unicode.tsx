@@ -7,9 +7,6 @@ import PostList from "./PostList";
 import PostFilter from "./PostFilter"
 import {Post} from "../shared/interfaces/interfaces";
 
-
-/*const postsApi = new PostsApi()*/
-
 const Unicode = () => {
 
     const [posts, setPosts] = useState<Post[]>([])
@@ -27,20 +24,17 @@ const Unicode = () => {
 
     const sortedPostByIdUp = useCallback(() => {
         setPosts(prev => ([...prev].sort((a, b) => b.id - a.id)))
-        /*localStorage.setItem("posts")*/
     }, [posts])
 
     const createPost = useCallback((newPost: Post) => {
         setPosts([...posts, newPost])
         setModal(false)
-        /*localStorage.setItem("posts")*/
     }, [posts])
 
     const removePost = useCallback((post: Post) => {
         const getRemove = posts.filter(el => el.id !== post.id)
         setPosts(getRemove)
         unpinPost(post)
-        /*localStorage.setItem("posts")*/
     }, [posts])
 
     const pinPost = useCallback((post: Post) => {
@@ -53,20 +47,12 @@ const Unicode = () => {
             return
         }
         setPinned([...pinned, getPinned])
-        /*localStorage.setItem('pinnedPost', JSON.stringify([...pinned, getPinned]))*/
-    }, [posts])
+    }, [pinned])
 
     const unpinPost = useCallback((post: Post) => {
         const getUnpin = pinned.filter(el => el.id !== post.id)
         setPinned(getUnpin)
-        /*localStorage.setItem('pinnedPost', JSON.stringify(getUnpin))*/
     }, [pinned])
-
-    /*useEffect(() => {
-        localStorage.setItem("posts")
-        const res = postsApi.getAll()
-        setPosts(JSON.stringify(res))
-    }, [])*/
 
     return (
         <AppStyled>

@@ -1,11 +1,11 @@
-import React from "react";
-// import {MyInputProps} from "../../interfaces/interfaces";
 import {MyInputStyled} from "../../styled/styled-components";
+import React from "react";
+import {MyInputProps} from "../../interfaces/interfaces";
 
-const Input: (props: any, ref: any) => React.JSX.Element =((props: any , ref: any) => {
+const Input = React.forwardRef<HTMLInputElement, MyInputProps>((props, ref) => {
     return (
-        <MyInputStyled ref={ref} {...props}/>
-    )
-})
+        <MyInputStyled ref={ref} {...props} />
+    );
+});
 
 export default Input;
