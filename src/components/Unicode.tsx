@@ -47,7 +47,7 @@ const Unicode = () => {
             return
         }
         setPinned([...pinned, getPinned])
-    }, [pinned])
+    }, [pinned, posts])
 
     const unpinPost = useCallback((post: Post) => {
         const getUnpin = pinned.filter(el => el.id !== post.id)
